@@ -1,0 +1,77 @@
+Script started on 2026-11-26 05:25:08+00:00 [COMMAND="./test_224it02001281" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="76" LINES="25"]
+
+[0;34m================================================================[0m
+ OS 200 TEST HARNESS: sys_os200_224it02001281
+ Student: Emmanuel Virtuous Mensah (IDX: 224IT02001281)
+ Syscall Number: 463 | Target PID: 0
+[0;34m================================================================[0m
+
+  [[0;32mPASS[0m] Test 1: NULL Buffer Rejection (Expected -EINVAL or -EFAULT)
+  [[0;32mPASS[0m] Test 2: Zero Length Buffer Rejection (Expected -EINVAL)
+  [[0;32mPASS[0m] Test 3: Bad Challenge Rejection (Expected -EPERM)
+  [[0;32mPASS[0m] Test 4: Non-Existent PID Lookup (Expected -ESRCH)
+  [[0;32mPASS[0m] Test 5: Self Inspection (PID 0) (Expected success with bytes written > 0)
+
+[0;34m--- [Self Inspection Kernel Output Preview] ---[0m
+==========================================================
+ OS 200 KERNEL INSPECTION REPORT
+ Student Index   : 224IT02001281
+ Constants       : L4=1281, S=22, Variant=1 (B)
+ Target Process  : PID 3347 [test_224it02001]
+ Session Caller  : PID 3347 [test_224it02001] (TGID: 3347)
+==========================================================
+=== [VARIANT B: CPU Scheduling & Execution Metrics] ===
+Scheduling Policy       : SCHED_NORMAL (Fair) (0)
+Dynamic Priority (prio) : 120
+Static Priority         : 120
+Normal Priority         : 120
+Real-Time Priority      : 0
+Nice Value              : 0
+User CPU Time           : 0 ms (0 ns)
+System CPU Time         : 4 ms (4000000 ns)
+Voluntary Switches      : 0
+Involuntary Switches    : 2
+Assigned CPU Core       : 1
+Process State           : TASK_RUNNING (0x0)
+==========================================================
+ Status: SUCCESS | Kernel: 6.12-os200-224it02001281
+==========================================================
+
+[0;34m----------------------------------------------[0m
+
+  [[0;32mPASS[0m] Test 6: Target PID Inspection (Expected success inspecting PID 1)
+
+[0;34m--- [Target PID 1 Kernel Output Preview] ---[0m
+==========================================================
+ OS 200 KERNEL INSPECTION REPORT
+ Student Index   : 224IT02001281
+ Constants       : L4=1281, S=22, Variant=1 (B)
+ Target Process  : PID 1 [systemd]
+ Session Caller  : PID 3347 [test_224it02001] (TGID: 3347)
+==========================================================
+=== [VARIANT B: CPU Scheduling & Execution Metrics] ===
+Scheduling Policy       : SCHED_NORMAL (Fair) (0)
+Dynamic Priority (prio) : 120
+Static Priority         : 120
+Normal Priority         : 120
+Real-Time Priority      : 0
+Nice Value              : 0
+User CPU Time           : 348 ms (348000000 ns)
+System CPU Time         : 2172 ms (2172000000 ns)
+Voluntary Switches      : 2266
+Involuntary Switches    : 1382
+Assigned CPU Core       : 1
+Process State           : TASK_INTERRUPTIBLE (Sleeping) (0x1)
+==========================================================
+ Status: SUCCESS | Kernel: 6.12-os200-224it02001281
+==========================================================
+
+[0;34m--------------------------------------------[0m
+
+  [[0;32mPASS[0m] Test 7: Alternative Challenge (L4 = 1281) (Expected success with L4 challenge constant)
+[0;34m================================================================[0m
+ [0;32mALL 7 TESTS PASSED! Syscall fully verified.[0m
+[0;34m================================================================[0m
+
+
+Script done on 2026-11-26 05:25:08+00:00 [COMMAND_EXIT_CODE="0"]
